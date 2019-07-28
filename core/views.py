@@ -84,8 +84,14 @@ class SymptomViewsets(viewsets.ModelViewSet):
     queryset = models.Symptom.objects.all()
     serializer_class = serializers.SymptomSerializers
 
+class DisablityViewsets(viewsets.ModelViewSet):
+    queryset = models.Disablity.objects.all()
+    serializer_class = serializers.DisablitySerializers
 
-
+class DiseaseViewsets(viewsets.ModelViewSet):
+    queryset = models.Disease.objects.all()
+    serializer_class = serializers.DiseaseSerializers
+ 
 
 
 

@@ -93,3 +93,12 @@ class SymptomSerializers(serializers.ModelSerializer):
         model = models.Symptom
         fields = ('name',)
 
+class DisablitySerializers(serializers.ModelSerializer):
+    class Meta:
+        model = models.Disablity
+        fields = ('name')
+        
+class DiseaseSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = models.Disease
+        fields = ('name', 'description', 'syptoms')

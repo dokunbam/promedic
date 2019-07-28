@@ -28,7 +28,9 @@ router.register('drugSideEffect', views.DrugSideEffectViewSet),
 router.register('drugindication', views.DrugIndicationViewSets),
 router.register('drugcontraindication', views.DrugContraIndicationViewSet),
 router.register('drug', views.DrugViewSet),
-router.register('Symptom', views.SymptomViewsets),
+router.register('symptom', views.SymptomViewsets),
+router.register('disablity', views.DisablityViewsets),
+router.register('disease', views.DiseaseViewsets),
 ]
 
 urlpatterns = router.urls
