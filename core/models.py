@@ -163,7 +163,6 @@ class User(AbstractBaseUser):
         return self.email
 
 
-"""
 class MyUserManager(BaseUserManager):
     def create_user(self, mobile,  password=None):
         if not mobile:
@@ -187,7 +186,6 @@ class MyUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-
 class Member(AbstractBaseUser, PermissionsMixin):
 	USER_TYPE_CHOICES = (   
 		('SU', 'Super User'), 
@@ -203,7 +201,7 @@ class Member(AbstractBaseUser, PermissionsMixin):
 	email = models.EmailField(max_length=255, unique=True, null=True, blank=True)
 	
 
-	objects = MyUserManager()
+	objects = User()
 
 	USERNAME_FIELD = 'mobile'
 
@@ -212,8 +210,6 @@ class Member(AbstractBaseUser, PermissionsMixin):
 	def user_role_type(self):
 	    return self.get_user_type_display()
 
-"""
-"""    
 class Kit(models.Model):
 	name = models.CharField(max_length= 50, unique=True)
 
@@ -235,7 +231,7 @@ class Responder(models.Model):
 	areas_of_concentration = models.ManyToManyField(AreaOfConcentration, null=True)
 	kits = models.ManyToManyField(Kit, null=True)
 	profile_pic = models.ImageField(upload_to='responders_pics', null=True)
-	supporting_docs = models.ManyToManyField('ResponderDocument', null=True)
+	#supporting_docs = models.ManyToManyField('ResponderDocument', null=True)
 
 
 
@@ -256,7 +252,7 @@ class Responder(models.Model):
 		ordering = ["responder_code"]
 
 
-
+"""
 class DocumentType(models.Model):
 	name = models.CharField(max_length=50, unique=True)
 

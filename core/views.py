@@ -96,6 +96,16 @@ class UserViewsets(viewsets.ModelViewSet):
     queryset = models.User.objects.all()
     serializer_class = serializers.UserSerializers
  
+class KitViewsets(viewsets.ModelViewSet):
+    queryset = models.Kit.objects.all()
+    serializer_class = serializers.KitSerializers
+
+class ResponderViewsets(viewsets.ModelViewSet):
+    queryset = models.Responder.objects.all()
+    serializer_class = serializers.ResponderSerializers
+
+    
+
 
 """
 class MemberViewsets(viewsets.ModelViewSet):

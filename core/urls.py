@@ -32,7 +32,8 @@ router.register('symptom', views.SymptomViewsets),
 router.register('disablity', views.DisablityViewsets),
 router.register('disease', views.DiseaseViewsets),
 router.register('users', views.UserViewsets),
-
+#router.register('rest-auth/', include('rest_auth.urls')),
+router.register('kits', views.KitViewsets),
 ]
 
 urlpatterns = router.urls

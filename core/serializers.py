@@ -107,7 +107,18 @@ class UserSerializers(serializers.ModelSerializer):
     class Meta:
         model = models.User
         fields = ('phonenumber', 'password')
+
+class KitSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = models.Kit
+        fields = ('name',)
  
+class ResponderSerializers(serializers.ModelSerializer):
+     class Meta:
+         model = models.Responder
+         fields = ('member', 'first_name', 'last_name', 'middle_name', 
+         'serial_num', 'responder_code', 'gender', 'state', 'local_govt', 
+         'status', 'areas_of_concentration', 'kits', 'profile_pic', 'supporting_docs',)
 
 
 """

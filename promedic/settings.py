@@ -42,8 +42,15 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'rest_framework.authtoken', 
 ]
+"""
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # <-- And here
+    ],
+}
+"""
 
-AUTH_USER_MODEL = 'core.User'
+#AUTH_USER_MODEL = 'core.user'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
