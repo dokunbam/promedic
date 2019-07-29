@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
+from django.contrib.auth.models import AbstractUser
+from django.db import models
 # Create your models here.
 
 class StateManager(models.Manager):
@@ -146,6 +148,21 @@ class Disease(models.Model):
 	class Meta:
 		ordering = ["name"]
 
+
+class User(AbstractBaseUser):
+    username = None
+    phonenumber = models.CharField(unique=True, max_length=16)
+    password = models.CharField(max_length=20)
+
+    
+    USERNAME_FIELD = 'phonenumber'
+    REQUIRED_FIELDS = ['password']
+    
+
+    def __str__(self):
+        return self.email
+
+
 """
 class MyUserManager(BaseUserManager):
     def create_user(self, mobile,  password=None):
@@ -154,7 +171,7 @@ class MyUserManager(BaseUserManager):
 
         user = self.model(
             mobile= mobile,
-        
+
         )
 
         user.set_password(password)
@@ -169,7 +186,6 @@ class MyUserManager(BaseUserManager):
         user.is_admin = True
         user.save(using=self._db)
         return user
-
 
 
 class Member(AbstractBaseUser, PermissionsMixin):
@@ -196,7 +212,8 @@ class Member(AbstractBaseUser, PermissionsMixin):
 	def user_role_type(self):
 	    return self.get_user_type_display()
 
-    
+"""
+"""    
 class Kit(models.Model):
 	name = models.CharField(max_length= 50, unique=True)
 

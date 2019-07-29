@@ -31,6 +31,8 @@ router.register('drug', views.DrugViewSet),
 router.register('symptom', views.SymptomViewsets),
 router.register('disablity', views.DisablityViewsets),
 router.register('disease', views.DiseaseViewsets),
+router.register('users', views.UserViewsets),
+
 ]
 
 urlpatterns = router.urls

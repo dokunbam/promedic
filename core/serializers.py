@@ -97,8 +97,23 @@ class DisablitySerializers(serializers.ModelSerializer):
     class Meta:
         model = models.Disablity
         fields = ('name')
-        
+
 class DiseaseSerializers(serializers.ModelSerializer):
     class Meta:
         model = models.Disease
         fields = ('name', 'description', 'syptoms')
+
+class UserSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = models.User
+        fields = ('phonenumber', 'password')
+ 
+
+
+"""
+class MemberSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = models.Member
+        fields = ('mobile', 'is_active', 'is_admin', 'user_type', 'email')
+
+        """

@@ -91,11 +91,17 @@ class DisablityViewsets(viewsets.ModelViewSet):
 class DiseaseViewsets(viewsets.ModelViewSet):
     queryset = models.Disease.objects.all()
     serializer_class = serializers.DiseaseSerializers
+
+class UserViewsets(viewsets.ModelViewSet):
+    queryset = models.User.objects.all()
+    serializer_class = serializers.UserSerializers
  
 
-
-
-
+"""
+class MemberViewsets(viewsets.ModelViewSet):
+    queryset =  models.Member.objects.all()
+    serializer_class = serializers.MemberSerializers
+"""
 
 
 
